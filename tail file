@@ -1,0 +1,25 @@
+#Tail file
+<source>
+ @type tail
+ format json
+ read_from_head true
+ tag mytag
+ path /var/log/auth.log
+ pos_file /var/log/td-agent/auth-2.log.pos
+</source>
+
+<filter mytag>
+@type parser
+key_name log
+ <parse>
+ @type none
+ </parse>
+</filter>
+ # key_name message
+ # format grok
+ # pattern %{GREEDYDATA:message}
+
+
+<match mytag>
+ @type stdout
+</match>
