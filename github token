@@ -1,1 +1,12 @@
 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
+
+
+git config --global user.name "vaishnavijk"
+git config --global user.email "batgerivaishnavi99@gmail.com"
+git config -l
+
+
+git clone https://github.com/dockersamples/example-voting-app.git
+> Cloning into `YOUR-REPOSITORY`...
+Username: <type your username>
+Password: <type your password or personal access token (GitHub)
