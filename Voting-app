@@ -1,0 +1,38 @@
+git clone https://github.com/dockersamples/example-voting-app.git
+ls -ltrh
+cd /root/example-voting-app
+cd vote/
+docker build . -t voting-app
+docker images
+docker run  -p  5000:80 voting-app
+docker ps
+   41  docker run --name=redis redis
+   42  docker ps -a
+   43  docker images
+   44  docker ps
+   45  docker run -d --name=redis redis
+   46  docker ps -a
+   47  docker rm 41a507057c0f
+   48  docker run -d --name=redis redis
+   49  docker ps
+   50  docker run -p 5000:80 --link redis:redis voting-app
+   51  docker run --name=db postgres:9.4
+   52  docker run -d --name=db -e POSTGRES_PASSWORD=postgres postgres:9.4
+   53  docker ps
+   54  docker ps -a 
+   55  docker rm 83f5a2023190
+   56  docker run -d --name=db -e POSTGRES_PASSWORD=postgres postgres:9.4
+   57  docker ps
+   58  cd ../worker/
+   59  ls
+   60  cat Dockerfile 
+   61  docker build . -t worker-app
+   62  docker images
+   63  docker run --link redis:reids --link db:db worker-app
+cd result/
+   67  ls
+   68  cat Dockerfile 
+   69  docker build . -t result-app
+   70  docker images
+   71  docker run -p 5001:80 --link db:db result-app
+
